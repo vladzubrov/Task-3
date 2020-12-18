@@ -10,15 +10,34 @@ namespace Task_3
     {
         static void Main()
         {
-            Console.Write("Введите слово  ");
-            string a = Console.ReadLine();
-            string b="";
-                        
-            for (int i = a.Length; i>0; i--)
+            int i ;
+            int j ;
+            int[,] a = new int[5, 5];
+            int f = 0;
+            for (i = 0; i < 5; i++)
             {
-                b = b + a[i-1]; 
-            }
-            Console.Write(b);
+                for (j = 0; j < 5; j++)
+                {
+                    a[i, j] = f;
+                    f = f + 1;
+                    System.Console.Write(String.Format("{0:00} ", a[i, j]));
+                    
+                };
+             System.Console.WriteLine();
+            };
+            System.Console.WriteLine();
+            for (i = 0; i < 5; i++)
+            {
+                for (j = 0; j < 5; j++)
+                {
+                    if (i == j)
+                    { System.Console.Write(String.Format("{0:00} ", a[i, j])); }
+                    else
+                    { System.Console.Write(String.Format("{0:00} ", 0)); }
+
+                };
+                System.Console.WriteLine();
+            };
             Console.ReadLine();
         }
     }
